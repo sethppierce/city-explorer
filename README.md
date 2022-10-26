@@ -42,3 +42,13 @@ Start time: 4:30pm EST
 Finish time: 7:00pm EST
 
 Actual time needed to complete: 2 and a half hours
+
+Name of feature: Weather Data
+
+Estimate of time needed to complete: _____
+
+Start time: _____
+
+Finish time: _____
+
+Actual time needed to complete: _____
