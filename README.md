@@ -23,6 +23,8 @@ I am using Javascript, React, React-bootstrap, Axios, and CSS to build this appl
 
 10-24-2022 7:33 pm EST - Application now has a get route to LocationIQ geocoding and LocationIQ static maps. User can now enter a city name and get it's name, latitude, longititude, and a static map of the city.
 
+10-26-2022 10:30AM EST - Application now has a get route to my city-explorer-api and can pull and display weather data for certain cities, displays error when weather data is not available for city.
+
 ## Credit and Collaborations
 
 Steven Rejdukowski - collaborated to create our web request-response cycle.
@@ -33,7 +35,7 @@ Steven Rejdukowski - collaborated to create our web request-response cycle.
 
 ## Feature Tasks
 
-Name of feature: Display Name and Map or Error Message
+### Name of feature: Display Name and Map or Error Message
 
 Estimate of time needed to complete: 2 hours
 
@@ -43,12 +45,12 @@ Finish time: 7:00pm EST
 
 Actual time needed to complete: 2 and a half hours
 
-Name of feature: Weather Data
+### Name of feature: Weather Data
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 2 Hours
 
-Start time: _____
+Start time: 12:00AM EST
 
-Finish time: _____
+Finish time: 1:30AM EST
 
-Actual time needed to complete: _____
+Actual time needed to complete: One and a half hours
