@@ -1,0 +1,39 @@
+#weatherData {
+  color: #8C6542;
+}
+
+
+#weatherDataItem{
+  background-color: #35848C;
+  height: 40px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid;
+  border-color: #8C6542;
+  border-width: 2px;
+  border-radius: 20px;
+  margin-top: 10px;
+  color: #ACF2EB;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+#weatherErr {
+  margin-left: 20px;
+  background-color: #35848C;
+  height: 40px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid;
+  border-color: #8C6542;
+  border-width: 2px;
+  border-radius: 20px;
+  margin-top: 10px;
+  color: #ACF2EB;
+  font-size: 25px;
+  font-weight: 500;
+}
