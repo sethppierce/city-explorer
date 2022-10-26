@@ -16,7 +16,11 @@ export default class App extends Component {
       error: false,
       errorMessage: '',
       cityMap: '',
-      display: false
+      show: false,
+      weatherErr: '',
+      weatherData: '',
+      showWeather: true,
+      showWeatherErr: true,
     }
   }
 
@@ -46,11 +50,12 @@ export default class App extends Component {
         error: false,
         cityLat: cityData.data[0].lat,
         cityLon: cityData.data[0].lon,
-        display: true
+        showWeather: true,
+        showWeatherErr: true,
+        show: true
       });
       
       console.log(this.state)
-
     } catch(error){
       console.log(error);
       this.setState({
@@ -58,18 +63,46 @@ export default class App extends Component {
         errorMessage: error.message,
         errorData: error.response.data.error
       })
+    }}
+
+    handleWeather = async () => {
+      try {
+        let lat = this.state.cityLat
+        let lon = this.state.cityLon
+        const weatherData = await axios.get(`https://sethppierce-city-explorer.herokuapp.com/weather?city_name=${this.state.city}&lat=${lat}&lon=${lon}`)
+        this.setState({weatherData: weatherData.data, showWeather: false})
+        console.log(this.state.weatherData)
+      } catch(error){
+        console.log(error);
+        const weatherErr = error.response.data
+        
+      this.setState({weatherErr: weatherErr, showWeather:false, showWeatherErr:false})
+      }
     }
-  }
+
+    
+      
 
   render() {
     let cityMapUrl = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${this.state.cityLat},${this.state.cityLon}&zoom=10`
     let cityDisplay;
-    if(this.state.display === false){
+    if(this.state.show === false){
       cityDisplay = null;
     }
-    if(this.state.display === true){
-      cityDisplay = <CityCard cityName={this.state.cityData.display_name} cityLat={this.state.cityLat} cityLon={this.state.cityLon} cityMap={cityMapUrl} display={this.state.display}/>
+    if(this.state.show === true){
+      cityDisplay = <CityCard cityName={this.state.cityData.display_name} 
+      cityLat={this.state.cityLat} 
+      cityLon={this.state.cityLon} 
+      cityMap={cityMapUrl} 
+      show={this.state.show}
+      weatherErr={this.state.weatherErr}
+      weatherData={this.state.weatherData}
+      handleWeather={this.handleWeather}
+      showWeather={this.state.showWeather}
+      showWeatherErr={this.state.showWeatherErr}/>
     }
+
+    console.log(this.state.weatherData);
     return (
       <main>
           <header>
@@ -86,7 +119,7 @@ export default class App extends Component {
           <div>
           {
             this.state.error  ? 
-            <Error errorMessage={this.state.errorMessage} errorData={this.state.errorData}/>
+            <Error errorMessage={this.state.errorMessage} errorData={this.state.errorData} weatherErr={this.state.weatherErr}/>
             :
             <p>{cityDisplay}</p>
           }
