@@ -2,9 +2,12 @@ import React, { Component } from 'react'
 import Card from 'react-bootstrap/Card';
 import './CityCard.css'
 import WeatherData from './WeatherData';
+import Movies from './Movies';
 
 export default class CityCard extends Component {
-
+  componentDidMount(){
+    this.props.handleWeather();
+  }
   render() {
     return (
       <div id='container' display={this.props.show}>
@@ -15,16 +18,11 @@ export default class CityCard extends Component {
             {this.props.cityLat},{this.props.cityLon}
           </Card.Text>
           <div id='weatherContainer'>
-            {
-            this.props.showWeather
-            ?
-            <button onClick={this.props.handleWeather}>Find Out the Weather!</button>
-            :  
               <WeatherData weatherData={this.props.weatherData} weatherErr={this.props.weatherErr} showWeatherErr={this.props.showWeatherErr}/>
-            }
           </div>
         </Card.Body>
-        <Card.Img variant="bottom" src={this.props.cityMap} />
+        <Card.Img variant="bottom" src={this.props.cityMap} id='map' />
+          <Movies city={this.props.city}/>
         </Card>
       </div>
     );

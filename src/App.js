@@ -18,7 +18,7 @@ export default class App extends Component {
       cityMap: '',
       show: false,
       weatherErr: '',
-      weatherData: '',
+      weatherData: {date: [], description:[]},
       showWeather: true,
       showWeatherErr: true,
     }
@@ -28,6 +28,7 @@ export default class App extends Component {
 
   handleInput = (e) => {
     e.preventDefault();
+    console.log(e.target.value)
     this.setState({
       city: e.target.value
     })
@@ -35,7 +36,6 @@ export default class App extends Component {
 
   getCityData = async (e) => {
     e.preventDefault();
-    console.log(this.state.city);
 
     try {
 
@@ -43,8 +43,6 @@ export default class App extends Component {
       
       
       let cityData = await axios.get(url);
-
-      console.log(cityData.data[0]);
       this.setState({
         cityData: cityData.data[0],
         error: false,
@@ -52,12 +50,10 @@ export default class App extends Component {
         cityLon: cityData.data[0].lon,
         showWeather: true,
         showWeatherErr: true,
-        show: true
+        show: true,
       });
       
-      console.log(this.state)
     } catch(error){
-      console.log(error);
       this.setState({
         error: true,
         errorMessage: error.message,
@@ -94,6 +90,7 @@ export default class App extends Component {
       cityLat={this.state.cityLat} 
       cityLon={this.state.cityLon} 
       cityMap={cityMapUrl} 
+      city={this.state.city}
       show={this.state.show}
       weatherErr={this.state.weatherErr}
       weatherData={this.state.weatherData}
