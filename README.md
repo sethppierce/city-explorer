@@ -27,13 +27,17 @@ I am using Javascript, React, React-bootstrap, Axios, and CSS to build this appl
 
 10-26-2022 8:30PM EST = Application now has a get route to my city-explorer-api and can pull weather and movie data for cities.
 
+10-27-2022 4PM EST - Refactored
+
 ## Credit and Collaborations
 
 Steven Rejdukowski - collaborated to create our web request-response cycle.
 
 ## Web Request-Response cycle
 
-![web-response cycle](request_response.jpeg)
+![web-response cycle](request-response.jpg)
+![web-response cycle](request-response2.jpg)
+![web-response cycle](request_response3.jpeg)
 
 ## Feature Tasks
 
@@ -66,3 +70,13 @@ Start time: 4PM EST
 Finish time: 7PM EST
 
 Actual time needed to complete: Three Hours
+
+## Name of feature: Refactoring
+
+Estimate of time needed to complete: 45 minutes
+
+Start time: 3PM EST
+
+Finish time: 3:45PM EST
+
+Actual time needed to complete: 45 minutes
