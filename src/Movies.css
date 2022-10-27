@@ -1,28 +1,41 @@
 #movieContainer {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, .5fr);
   grid-auto-rows: auto;
-  grid-gap: 5rem;
+  grid-gap: 1rem;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 100px;
+  width: 85%;
+  padding: 20px;
+  background-color: #6672bc;
 }
 
 .movieCard {
-  height: fit-content;
-  width: 300px;
-  padding: 30px;
-  border-radius: 50px;
-  background-color: #35848C;
+  height: 350px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #a0afe1;
+  margin-bottom: 40px;
+  border: 2px solid #373b86;
+
 }
 
-img{
-  height: 300px;
+.movieImg{
+  height: 60%;
+  border-radius: 20px;
+
 }
 #movieTitle {
-  font-size: 30px;
+  font-size: 20px;
 }
 
 #movieDescription {
   font-size: 18px;
+}
+
+@media only screen and (max-width: 1000px) {
+  #movieContainer{
+    grid-template-columns: repeat(2, .5fr);
+  }
 }
