@@ -32,7 +32,7 @@ export default class Movies extends Component {
     }
   }
   render() {
-    console.log(this.state.movies)
+
     let allMovies = this.state.movies.map((item, index) => {
       return <MovieItem item={item} key={index}/>
     })
