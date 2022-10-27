@@ -106,11 +106,10 @@ export default class App extends Component {
             <h1>City Explorer!</h1>
           </header>
           <nav>
-            <form onSubmit={this.getCityData}>
-              <label > Pick a City!
-                <input type="text" onInput={this.handleInput}/>
-                <button type='submit'>Explore!</button>
-              </label>
+            <form onSubmit={this.getCityData} id='form'>
+              <label > Pick a City!</label>
+              <input type="text" onInput={this.handleInput}/>
+              <button type='submit'>Explore!</button>
             </form>
           </nav>
           <div>
@@ -118,7 +117,7 @@ export default class App extends Component {
             this.state.error  ? 
             <Error errorMessage={this.state.errorMessage} errorData={this.state.errorData} weatherErr={this.state.weatherErr}/>
             :
-            <p>{cityDisplay}</p>
+            <div>{cityDisplay}</div>
           }
           </div>
         <Footer/>
