@@ -5,7 +5,7 @@ import WeatherData from './WeatherData';
 import Movies from './Movies';
 
 export default class CityCard extends Component {
-
+  
   componentDidMount(){
     this.props.handleWeather();
   }
@@ -26,7 +26,7 @@ export default class CityCard extends Component {
           </div>
           <Card.Img variant="bottom" src={this.props.cityMap} id='map' />
         </Card>
-        <div id='movieBorder'>Popular movies from {this.props.city}!</div>
+        <div id='movieBorder'>Popular movies from this city!</div>
         <Movies city={this.props.city}/>
       </div>
     );

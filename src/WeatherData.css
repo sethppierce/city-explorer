@@ -1,13 +1,20 @@
-#weathercontainer {
-  width: 80%;
+#weathercontain {
+  width: 100%;
   margin-top: 30px;
   color: white;
+  text-align: center;
+}
+
+.accordion {
 }
 
 .accordion button{
+  background-color: #a0afe1;
+  margin-left: auto;
   width: 100%;
 }
 
 #accordianItem {
   width: 100%;
 }
+
