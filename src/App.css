@@ -67,7 +67,16 @@ input {
 
 button {
 height: 70%;
-width: 50%;
+width: 40%;
+font-size: 1vw;
+border-radius: 20px;
+background-color: #6672bc;
+color: white;
+border-color: #a0afe1;
+}
+
+button:hover {
+  background-color: #a0afe1;
 }
 
 main {

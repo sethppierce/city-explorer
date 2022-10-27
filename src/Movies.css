@@ -33,3 +33,9 @@
 #movieDescription {
   font-size: 18px;
 }
+
+@media only screen and (max-width: 1000px) {
+  #movieContainer{
+    grid-template-columns: repeat(2, .5fr);
+  }
+}
