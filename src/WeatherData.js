@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './WeatherData.css'
+import WeatherAccord from './WeatherAccord';
 
 
 export default class WeatherData extends Component {
@@ -9,10 +10,8 @@ export default class WeatherData extends Component {
       <h1 id='weatherData'>WeatherData</h1>
       <div id='weathercontainer'>
             {this.props.showWeatherErr ?
-              <ul id='weatherDataContain'>
-              {this.props.weatherData.description.map((item, index) => {
-                return <li id='weatherDataItem' key={index}>{item.date} {item.description}</li>})}
-              </ul> : <p id='weatherErr'>{this.props.weatherErr.toUpperCase()}</p>
+              this.props.weatherData.description.map((item, index) => {
+                return <WeatherAccord id='weatherDataItem' key={index} date={item.date} description={item.description}/>}): <p id='weatherErr'>{this.props.weatherErr.toUpperCase()}</p>
             }
       </div>
     </>
