@@ -20,6 +20,7 @@ export default class Movies extends Component {
   getMovieData = async () => {
     try {
       let url = `https://sethppierce-city-explorer.herokuapp.com/movies?city_name=${this.props.city}`
+      // let url = `https://localhost:3001/movies?city_name=${this.props.city}`
       let movieData = await axios.get(url);
       this.setState({
         movies: movieData.data,

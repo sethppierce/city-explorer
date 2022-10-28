@@ -38,6 +38,7 @@ Steven Rejdukowski - collaborated to create our web request-response cycle.
 ![web-response cycle](request-response.jpg)
 ![web-response cycle](request-response2.jpg)
 ![web-response cycle](request_response3.jpeg)
+![web-response cycle](request-response4.jpg)
 
 ## Feature Tasks
 

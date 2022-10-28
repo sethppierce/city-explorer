@@ -18,7 +18,7 @@ export default class App extends Component {
       cityMap: '',
       show: false,
       weatherErr: '',
-      weatherData: {date: [], description:[]},
+      weatherData: [],
       showWeather: true,
       showWeatherErr: true,
     }
@@ -65,7 +65,7 @@ export default class App extends Component {
       try {
         let lat = this.state.cityLat
         let lon = this.state.cityLon
-        const weatherData = await axios.get(`https://sethppierce-city-explorer.herokuapp.com/weather?city_name=${this.state.city}&lat=${lat}&lon=${lon}`)
+        const weatherData = await axios.get(`https://sethppierce-city-explorer.herokuapp.com/weather?lat=${lat}&lon=${lon}`)
         this.setState({weatherData: weatherData.data, showWeather: false})
         console.log(this.state.weatherData)
       } catch(error){
