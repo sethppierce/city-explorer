@@ -10,8 +10,8 @@ export default class WeatherData extends Component {
       <h1 id='weatherData'>WeatherData</h1>
       <div id='weathercontain'>
             {this.props.showWeatherErr ?
-              this.props.weatherData.description.map((item, index) => {
-                return <WeatherAccord id='weatherDataItem' key={index} date={item.date} description={item.description}/>}): <p id='weatherErr'>{this.props.weatherErr.toUpperCase()}</p>
+              this.props.weatherData.map((item, index) => {
+                return <WeatherAccord id='weatherDataItem' key={index} date={item.time} description={item.forecast}/>}): <p id='weatherErr'>{this.props.weatherErr.toUpperCase()}</p>
             }
       </div>
     </>
